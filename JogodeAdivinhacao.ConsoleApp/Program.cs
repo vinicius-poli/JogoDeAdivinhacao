@@ -1,2 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿
+Console.WriteLine("----------------------");
+Console.WriteLine("Jogo de Adivinhação");
+Console.WriteLine("----------------------");
+
+Console.Write("Digite um número entre 1 e 20: ");
+string? chute = Console.ReadLine();
