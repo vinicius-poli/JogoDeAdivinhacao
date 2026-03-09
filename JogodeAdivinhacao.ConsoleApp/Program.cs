@@ -1,7 +1,55 @@
-﻿
-Console.WriteLine("----------------------");
-Console.WriteLine("Jogo de Adivinhação");
-Console.WriteLine("----------------------");
+﻿using System;
 
-Console.Write("Digite um número entre 1 e 20: ");
-string? chute = Console.ReadLine();
+//Eu quero usar a biblioteca padrão de sistema relacionada a criptografia
+using System.Security.Cryptography;
+
+bool deveContinuar = true;
+
+while(deveContinuar == true)
+{
+    Console.Clear();
+
+    Console.WriteLine("----------------------");
+    Console.WriteLine("Jogo de Adivinhação");
+    Console.WriteLine("----------------------");
+
+    int numeroAleatorio = RandomNumberGenerator.GetInt32(1, 21);
+
+    Console.Write("Digite um número entre 1 e 20: ");
+    string? chute = Console.ReadLine();
+
+    int numeroDigitado = Convert.ToInt32(chute);
+
+    if (numeroDigitado == numeroAleatorio)
+    {
+        Console.WriteLine("----------------------");
+        Console.WriteLine("Parabéns, você acertou!");
+        Console.WriteLine("----------------------");
+    }
+
+    else if (numeroDigitado > numeroAleatorio)
+    {
+        Console.WriteLine("----------------------");
+        Console.WriteLine("O número digitado é maior que o número secreto!");
+        Console.WriteLine("----------------------");
+    }
+
+    else
+    {
+        Console.WriteLine("----------------------");
+        Console.WriteLine("O número digitado é menor que o número secreto!");
+        Console.WriteLine("----------------------");
+    }
+
+    Console.Write("Deseja continuar? (S/N) ");
+    string? opcaoContinuar = Console.ReadLine.();
+
+    if (opcaoContinuar.ToUpper() != "S")
+    {
+        break;
+    }
+
+}
+
+
+
