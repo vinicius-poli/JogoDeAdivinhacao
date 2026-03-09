@@ -42,7 +42,7 @@ while(deveContinuar == true)
     }
 
     Console.Write("Deseja continuar? (S/N) ");
-    string? opcaoContinuar = Console.ReadLine.();
+    string? opcaoContinuar = Console.ReadLine();
 
     if (opcaoContinuar.ToUpper() != "S")
     {
