@@ -42,10 +42,10 @@ while(deveContinuar == true)
     }
 
     Console.Write("Deseja continuar? (S/N) ");
-    string? opcaoContinuar = Console.ReadLine();
+    string? opcaoContinuar = Console.ReadLine(); //nullabe (Pode conter nada(null))
 
-    if (opcaoContinuar.ToUpper() != "S")
-    {
+    if (opcaoContinuar?.ToUpper() != "S") // ? => Só executa a ação ToUpper() se a variavel nao for null
+    {                                     // ! => Força a execução de ToUpper() mesmo se for null
         break;
     }
 
