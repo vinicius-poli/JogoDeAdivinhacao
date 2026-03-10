@@ -12,6 +12,8 @@ using System.Security.Cryptography;
 
 bool deveContinuar = true;
 
+int pontuacao = 0;
+
 while(deveContinuar == true)
 {   
     int[] numerosDigitados =  new int [100];
@@ -120,12 +122,32 @@ while(deveContinuar == true)
             Console.WriteLine("O número digitado é menor que o número secreto!");
             Console.WriteLine("----------------------");
         }
-        if (tentativa ==  tentativasMaximas)
+
+        int diferencaNumerica = Math.Abs(numeroAleatorio - numeroDigitado);
+
+        if (diferencaNumerica >= 10)
+        {
+            pontuacao -= 100;
+        }
+        else if (diferencaNumerica >= 5)
+        {
+            pontuacao -= 50;
+        }
+        else
+        {
+            pontuacao -= 20;
+        }
+
+        Console.WriteLine("Sua pontuação é : " + pontuacao);
+        Console.WriteLine("----------------------");
+        Console.WriteLine("Digite ENTER para continuar...");  
+        Console.ReadLine();
+
+         if (tentativa ==  tentativasMaximas)
         {
             Console.WriteLine($"Você usou todas as suas tentativas. O número aleatório era {numeroAleatorio}.");
             Console.WriteLine("----------------------"); 
-        }
-        Console.ReadLine();    
+        }    
     }
 
     Console.Write("Deseja continuar? (S/N) ");
